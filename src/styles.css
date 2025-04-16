@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+	--color-chocolate	: #86563c;
+	--width-42			: 170px;
+	--spacing-42		: 172px;
+
+	/* --breakpoint-c-sm		: 645px;
+	--breakpoint-c-md		: 770px;
+	--breakpoint-c-lg		: 950px;
+	--breakpoint-c-tablet	: 1100px; */
+
+
+
+	/* --screens-sm		: 1024px; */
+	/* --screens-md		: 748px; */
+	/* --screens-tablet	: 900px; */
+	/* --screens-lg		: 1024px; */
+}
+
+@layer base {
+	h1 {
+	  font-size: var(--text-2xl);
+	}
+	h2 {
+	  font-size: var(--text-xl);
+	}
+	h3 {
+		font-size: var(--text-lg);
+	}
+	h4 {
+		font-size: var(--text-base);
+	}
+	h5 {
+		font-size: var(--text-sm);
+	}
+	h6 {
+		font-size: var(--text-xs);
+	}
+}
+
+@layer components {
+	.card {
+		/* @apply bg-red-500 w-40 h-40 grid place-content-center rounded-lg text-white font-bold border-2 border-red-600 text-4xl */
+		@apply bg-red-500 grid place-content-center rounded-lg text-white font-bold border-2 border-red-600 text-4xl
+	}
+	.card-two {
+		@apply bg-red-500 grid place-content-center rounded-lg text-white font-bold border-2 border-red-600 text-4xl
+	}
+}
