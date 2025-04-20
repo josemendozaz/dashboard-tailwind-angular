@@ -45,6 +45,6 @@ export const routes: Routes = [
 	},
 	{
 		path			: '**',
-		redirectTo		: 'page-not-found'
+		redirectTo		: 'dashboard'
 	}
 ];

@@ -52,3 +52,16 @@
 		@apply bg-red-500 grid place-content-center rounded-lg text-white font-bold border-2 border-red-600 text-4xl
 	}
 }
+
+
+@keyframes translate-to-left {
+	0%, 50% {
+		transform: translateX(-100%);
+	}
+	100% {
+		display: none;
+	}
+}
+.animate-close-navbar-mobile {
+	animation: translate-to-left 1s ease-in-out infinite;
+}

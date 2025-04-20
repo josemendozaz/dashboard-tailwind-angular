@@ -1,0 +1,39 @@
+.sidebar-content {
+    -ms-overflow-style: none!important;  /* Internet Explorer 10+ */
+    scrollbar-width: none!important;  /* Firefox */
+}
+.sidebar-content::-webkit-scrollbar {
+    display: none!important;  /* Safari and Chrome */
+}
+
+
+
+/* Botón con estilo general */
+.button-sidebar {
+	/* position: relative; */
+	/* overflow: hidden;  Hace que la onda no salga fuera del botón */
+}
+/* Pseudo-elemento para la animación de onda */
+.button-sidebar::after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	background: red;  /* Color de la onda */
+	transform: scale(0);
+	pointer-events: none;  /* No interfiere con otros eventos */
+	animation: wave-animation 0.6s ease-out; /* Duración y tipo de animación */
+	opacity: 0;
+}
+/* Definir la animación de la onda */
+@keyframes wave-animation {
+	to {
+		transform: scale(4);  /* Hace que la onda crezca */
+		opacity: 0;
+	}
+}
+
+/* Cuando el botón es clickeado, la animación se aplica */
+.button-sidebar.clicked::after {
+	transform: scale(4);
+	opacity: 0;
+}
