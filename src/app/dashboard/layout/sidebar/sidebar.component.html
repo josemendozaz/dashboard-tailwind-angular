@@ -1,0 +1,81 @@
+<!-- Contenedor del sidebar y fondo -->
+<div class="fixed inset-0 z-40 pointer-events-none sm:flex md:flex">
+	<!-- Fondo oscuro (click para cerrar) -->
+	@if( sidebarService.getIsMobile ) {
+		<div
+			class="absolute w-full h-full bg-black/50 transition-opacity duration-500 ease-in-out pointer-events-auto sm:relative md:relative md:opacity-100"
+			[class.opacity-0]="!sidebarService.getSidebarShow"
+			[class.opacity-100]="sidebarService.getSidebarShow"
+			[class.hidden]="!sidebarService.getSidebarShow && sidebarService.getHideOverlay"
+			(click)="closeSidebar()"
+		></div>
+	}
+	<!-- Sidebar -->
+	<aside
+		class="sidebar w-[300px] h-full z-50 fixed top-0 left-0 transition-transform duration-500 ease-in-out pointer-events-auto md:w-[280px] md:fixed md:h-screen p-4"
+		[class.translate-x-0]="sidebarService.getSidebarShow"
+		[class.-translate-x-full]="!sidebarService.getSidebarShow"
+	>
+		<div class="sidebar-content h-full w-full relative flex flex-col bg-white border-1 border-gray-300 rounded-xl p-5 overflow-auto">
+			<h3 class="text-black/90 font-bold mt-3 mb-3 text-lg md:text-base">Material Tailwind Angular</h3>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-gradient-to-bl from-[#3F3F3F] to-[#242424] rounded-md text-white font-semibold text-left flex flex-row gap-4 shadow-2xl mt-1 mb-1 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroHomeSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Dashboard
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroUserCircleSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Profile
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroExclamationCircleSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Notifications
+				</span>
+			</button>
+			<br>
+			<h3 class="text-black/50 font-bold mt-3 mb-3 text-lg md:text-base">
+				AUTH PAGES
+			</h3>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroServerStackSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Sign In
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Sign Up
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Sign Up
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Sign Up
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Sign Up
+				</span>
+			</button>
+			<button class="button-sidebar relative overflow-hidden min-w-[226.4px] min-h-[60px] p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer md:p-3 md:min-w-[206px] md:min-h-[46px]" type="button" (click)="rippleEffect( $event )">
+				<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
+				<span class="p-0 text-lg md:text-base">
+					Sign Up
+				</span>
+			</button>
+		</div>
+	</aside>
+</div>

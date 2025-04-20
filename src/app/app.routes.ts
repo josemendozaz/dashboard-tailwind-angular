@@ -32,7 +32,7 @@ export const routes: Routes = [
 	{
 		path			: 'dashboard',
 		component		: DashboardComponent,
-		title			: 'dashboard Page'
+		title			: 'Dashboard Page'
 		// canActivate		: [ PreventLoginGuard ],
 		// canLoad			: [ PreventLoginGuard ],
 	},

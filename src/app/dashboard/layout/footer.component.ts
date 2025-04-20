@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
 	selector	: 'app-footer',
 	imports		: [],
 	template	: `
-		<p>
-			footer works!
-		</p>
+		<span class="italic font-semibold text-xs">
+			© 2025, made by <a href="https://github.com/josemendozaz" target="_blank" >José Mendoza Zavala</a>.
+		</span>
 	`,
 	styles		: ``
 })

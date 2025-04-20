@@ -1,11 +1,8 @@
-
 <!-- grid-cols-[250px_1fr]
 	➡️ "Mi grid tiene 2 columnas:
 	la primera de 250px (para el menú lateral)
 	la segunda de 1fr (para el contenido)"
 -->
-
-
 <!--
 	grid-rows-[60px_40px_1fr_40px]
 		Esto define 4 filas:
@@ -14,116 +11,23 @@
 			1fr → el contenido crece y llena el espacio (section + sidebar)
 			40px → altura del footer
 -->
-<div class="h-screen grid grid-cols-[280px_fr] grid-rows-[60px_1fr_40px] sm:grid-cols-[230px_1fr] sm:grid-rows-[60px_40px_1fr_40px] md:grid-cols-[280px_1fr] md:grid-rows-[40px_1fr_40px] bg-gray-100/80">
 
-	<!-- Nav -->
-	<nav class="row-start-1 col-start-2 grid grid-cols-[50px_1fr] md:grid-cols-[100%] items-center bg-red-400 text-white">
-		<div class="text-center font-bold md:hidden">
-			<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl cursor-pointer items-start" name="heroBars3Solid" (click)="openNav()"></ng-icon>
-		</div>
-		<div class="text-end">
-			Lorem ipsum dolor
-		</div>
-	</nav>
+<div class="h-screen grid grid-cols-[280px_fr] grid-rows-[60px_1fr_40px] sm:grid-cols-[230px_1fr] sm:grid-rows-[60px_40px_1fr_40px] md:grid-cols-[280px_1fr] md:grid-rows-[40px_1fr_40px] bg-gray-100/40">
 
-	<!-- Contenedor del sidebar y fondo -->
-	<div class="fixed inset-0 z-40 pointer-events-none sm:flex md:flex">
-		<!-- Fondo oscuro (click para cerrar) -->
-		@if( isMobile ) {
-			<div
-				class="absolute w-full h-full bg-black/50 transition-opacity duration-500 ease-in-out pointer-events-auto sm:relative md:relative md:opacity-100"
-				[class.opacity-0]="!sidebarShow"
-				[class.opacity-100]="sidebarShow"
-				[class.hidden]="!sidebarShow && hideOverlay"
-				(click)="closeNav()"
-			></div>
-		}
+	<!-- NAV HEADER SECTION -->
+	<app-nav-header class="row-start-1 col-start-2 grid grid-cols-[50px_1fr] md:grid-cols-[100%] items-center bg-red-400 text-white"></app-nav-header>
 
-		<!-- Sidebar -->
-		<aside
-			class="sidebar w-[300px] h-full z-50 fixed top-0 left-0 transition-transform duration-500 ease-in-out pointer-events-auto md:w-[280px] md:fixed md:h-screen p-4"
-			[class.translate-x-0]="sidebarShow"
-			[class.-translate-x-full]="!sidebarShow"
-		>
-			<div class="sidebar-content h-full w-full relative flex flex-col bg-white border-1 border-gray-300 rounded-xl p-5 overflow-auto">
-				<h3 class="text-black/90 font-bold mt-3 mb-3 text-lg md:text-base">Material Tailwind Angular</h3>
-				<button class="button-sidebar p-4 bg-linear-to-bl from-[#3F3F3F] to-[#242424] rounded-md text-white font-semibold text-left items-start flex flex-row gap-4 md:p-3 shadow-2xl mt-1 mb-1 cursor-pointer" type="button" (click)="clickForWaveAnimation( $event )">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroHomeSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Dashboard
-					</span>
-				</button>
-				<button class="button-sidebar p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button" (click)="clickForWaveAnimation( $event )">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroUserCircleSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Profile
-					</span>
-				</button>
-				<button class="button-sidebar p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button" (click)="clickForWaveAnimation( $event )">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroExclamationCircleSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Notifications
-					</span>
-				</button>
-				<br>
-				<h3 class="text-black/50 font-bold mt-3 mb-3 text-lg md:text-base">
-					AUTH PAGES
-				</h3>
-				<button class="button-sidebar p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button" (click)="clickForWaveAnimation( $event )">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroServerStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign In
-					</span>
-				</button>
-				<button class="button p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign Up
-					</span>
-				</button>
-				<button class="button p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign Up
-					</span>
-				</button>
-				<button class="button p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign Up
-					</span>
-				</button>
-				<button class="button p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign Up
-					</span>
-				</button>
-				<button class="button p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign Up
-					</span>
-				</button>
-				<button class="button p-4 bg-transparent rounded-md text-black/50 font-semibold text-left items-start flex flex-row gap-4 md:p-3 mt-1 mb-1 hover:bg-gray-500/10 cursor-pointer" type="button">
-					<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl" name="heroRectangleStackSolid"></ng-icon>
-					<span class="p-0 text-lg md:text-base">
-						Sign Up
-					</span>
-				</button>
-			</div>
-		</aside>
-  	</div>
+	<!-- SIDEBAR SECTION -->
+	<app-sidebar></app-sidebar>
 
-
-
-	<!-- Section (contenido) -->
+	<!-- MAIN SECTION (CONTENIDO) -->
 	<main class="row-start-2 col-start-2 bg-red-300 text-white flex items-center justify-center">
 		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim dolore provident delectus, laudantium cum inventore quibusdam aut consequatur architecto quis optio voluptate ratione veritatis! Repellat, earum. Officiis commodi aut itaque!
 	</main>
 
-	<!-- Footer (solo debajo del section) -->
-	<footer class="row-start-3 col-start-2 bg-red-500 text-white flex items-center justify-center">
-	  footer
+	<!-- FOOTER SECTION -->
+	<footer class="row-start-3 col-start-2 bg-gray-100/40 text-black/50 flex items-center justify-center">
+		<app-footer></app-footer>
 	</footer>
-  </div>
+
+</div>
