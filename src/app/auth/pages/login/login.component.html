@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="flex flex-col w-full items-center justify-center">
+	<h1 class="text-xl md:text-xl font-semibold dark:text-white">Inicio de Sesión</h1>
+	<span class="italic font-bold text-black/80 text-xs md:text-sm dark:text-white">Ingresa tu usuario y contraseña para iniciar sesión</span>
+	<form class="w-full md:pl-50 md:pr-50" action="">
+		<div class="flex flex-col w-full left-0 mt-2 mb-2">
+			<label class="mt-0.5 mb-0.5 font-semibold text-black/80 text-sm md:mt-2 md:mb-2 md:text-base dark:text-white" for="username">Nombre de Usuario</label>
+			<input class="p-1.5 border-2 border-black/30 rounded-md placeholder:text-black/20 md:p-2 dark:text-white dark:placeholder:text-white/60" id="username" name="username" type="text" placeholder="username32">
+		</div>
+		<div class="flex flex-col w-full left-0 mt-2 mb-2">
+			<label class="mt-0.5 mb-0.5 font-semibold text-black/80 text-sm md:mt-2 md:mb-2 md:text-base dark:text-white" for="password">Contraseña</label>
+			<input class="p-1.5 border-2 border-black/30 rounded-md placeholder:text-black/20 md:p-2 dark:text-white dark:placeholder:text-white/60" id="username" id="password" type="password" placeholder="**********">
+		</div>
+		<div>
+			<button class="block w-full rounded-lg mt-4 p-2 bg-gradient-to-bl from-[#3F3F3F] to-[#242424] text-white font-semibold uppercase cursor-pointer md:mt-8 dark:text-black dark:bg-gradient-to-bl dark:from-[#ffffff] dark:to-[#ffffff]">
+				Iniciar Sesión
+			</button>
+		</div>
+	</form>
+</div>

@@ -3,6 +3,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { User } from '@models/user.model';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
+import { ThemeService } from './dashboard/services/theme/theme.service';
 
 @Component({
 	selector	: 'app-root',
@@ -18,5 +19,10 @@ export class AppComponent {
 		email: '',
 		name: '',
 		roles: []
+	}
+	constructor(
+		private themeService	: ThemeService
+	) {
+		document.documentElement.classList.add( this.themeService.getThemeInDataStorage );
 	}
 }

@@ -3,11 +3,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 @theme {
-	--color-chocolate	: #86563c;
-	--width-42			: 170px;
-	--spacing-42		: 172px;
+	--color-chocolate		: #86563c;
+	--width-42				: 170px;
+	--spacing-42			: 172px;
+	/* --color-primary			: #F5F8FF; */
+	--color-primary-dark	: #14161A;
+
+
 
 	/* --breakpoint-c-sm		: 645px;
 	--breakpoint-c-md		: 770px;

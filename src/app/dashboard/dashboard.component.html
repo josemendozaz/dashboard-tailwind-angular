@@ -1,32 +1,18 @@
-<!-- grid-cols-[250px_1fr]
-	➡️ "Mi grid tiene 2 columnas:
-	la primera de 250px (para el menú lateral)
-	la segunda de 1fr (para el contenido)"
--->
-<!--
-	grid-rows-[60px_40px_1fr_40px]
-		Esto define 4 filas:
-			60px → altura del header
-			40px → altura del nav
-			1fr → el contenido crece y llena el espacio (section + sidebar)
-			40px → altura del footer
--->
-
-<div class="h-screen grid grid-cols-[280px_fr] grid-rows-[60px_1fr_40px] sm:grid-cols-[230px_1fr] sm:grid-rows-[60px_40px_1fr_40px] md:grid-cols-[280px_1fr] md:grid-rows-[40px_1fr_40px] bg-gray-100/40">
+<div class="h-screen grid grid-cols-[fr] grid-rows-[60px_1fr_40px] sm:grid-cols-[fr] sm:grid-rows-[60px_1fr_40px] md:grid-cols-[280px_1fr] md:grid-rows-[40px_1fr_40px] bg-gray-100/40 dark:bg-gradient-to-bl from-[#3F3F3F] to-[#242424]">
 
 	<!-- NAV HEADER SECTION -->
-	<app-nav-header class="row-start-1 col-start-2 grid grid-cols-[50px_1fr] md:grid-cols-[100%] items-center bg-red-400 text-white"></app-nav-header>
+	<app-nav-header class="row-start-1 col-start-2 grid grid-cols-[50px_1fr] sm:grid-cols-[50px_1fr] md:grid-cols-[100%] items-center bg-transparent text-black/50 dark:text-white"></app-nav-header>
 
 	<!-- SIDEBAR SECTION -->
 	<app-sidebar></app-sidebar>
 
 	<!-- MAIN SECTION (CONTENIDO) -->
-	<main class="row-start-2 col-start-2 bg-red-300 text-white flex items-center justify-center">
+	<main class="row-start-2 col-start-2 bg-red-300 flex items-center justify-center p-2 text-black/50 dark:text-white">
 		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim dolore provident delectus, laudantium cum inventore quibusdam aut consequatur architecto quis optio voluptate ratione veritatis! Repellat, earum. Officiis commodi aut itaque!
 	</main>
 
 	<!-- FOOTER SECTION -->
-	<footer class="row-start-3 col-start-2 bg-gray-100/40 text-black/50 flex items-center justify-center">
+	<footer class="row-start-3 col-start-2 flex items-center justify-center bg-transparent text-black/50 dark:bg-gradient-to-bl dark:text-white">
 		<app-footer></app-footer>
 	</footer>
 

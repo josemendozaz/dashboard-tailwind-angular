@@ -107,17 +107,31 @@ dashboard-tailwind-angular
 │  │  ├─ core
 │  │  │  ├─ auth
 │  │  │  │  ├─ auth.guard.spec.ts
-│  │  │  │  └─ auth.guard.ts
+│  │  │  │  ├─ auth.guard.ts
+│  │  │  │  └─ dashboard
+│  │  │  │     ├─ prevent-login.guard.spec.ts
+│  │  │  │     └─ prevent-login.guard.ts
 │  │  │  └─ interceptors
 │  │  ├─ dashboard
 │  │  │  ├─ dashboard.component.css
 │  │  │  ├─ dashboard.component.html
 │  │  │  ├─ dashboard.component.spec.ts
 │  │  │  ├─ dashboard.component.ts
-│  │  │  └─ layout
-│  │  │     ├─ footer.component.ts
-│  │  │     ├─ header.component.ts
-│  │  │     └─ nav-header.component.ts
+│  │  │  ├─ layout
+│  │  │  │  ├─ footer.component.ts
+│  │  │  │  ├─ header.component.ts
+│  │  │  │  ├─ nav-header.component.ts
+│  │  │  │  └─ sidebar
+│  │  │  │     ├─ sidebar.component.html
+│  │  │  │     ├─ sidebar.component.spec.ts
+│  │  │  │     └─ sidebar.component.ts
+│  │  │  └─ services
+│  │  │     ├─ sidebar
+│  │  │     │  ├─ sidebar.service.spec.ts
+│  │  │     │  └─ sidebar.service.ts
+│  │  │     └─ theme
+│  │  │        ├─ theme.service.spec.ts
+│  │  │        └─ theme.service.ts
 │  │  ├─ models
 │  │  │  └─ user.model.ts
 │  │  └─ shared
@@ -127,8 +141,13 @@ dashboard-tailwind-angular
 │  │     │  │  ├─ alert-modal.component.html
 │  │     │  │  ├─ alert-modal.component.spec.ts
 │  │     │  │  └─ alert-modal.component.ts
+│  │     │  ├─ dropdown.component.spec.ts
+│  │     │  ├─ dropdown.component.ts
 │  │     │  └─ page-404
 │  │     │     └─ page-404.component.ts
+│  │     ├─ directives
+│  │     │  ├─ click-outside.directive.spec.ts
+│  │     │  └─ click-outside.directive.ts
 │  │     └─ pipe
 │  ├─ environments
 │  │  ├─ environment.prod.ts

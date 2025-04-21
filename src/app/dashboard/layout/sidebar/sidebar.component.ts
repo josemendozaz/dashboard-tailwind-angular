@@ -79,6 +79,7 @@ export class SidebarComponent {
 		this.breakpointObserver.observe( ['(max-width: 768px)'] )
 		.subscribe(result => {
 			this.sidebarService.setIsMobile	= result.matches;
+			console.log( result.matches );
 			if ( !this.sidebarService.getIsMobile ) {
 				this.sidebarService.setSidebarShow	= true;
 				this.sidebarService.setHideOverlay	= true;

@@ -18,7 +18,7 @@ export class SidebarService {
 	 * @var				hideOverlay : boolean
 	 * @description		variable boolean que indica si se debe mostrar el fondo oscuro detras del sidebar (overlay)
 	 */
-	hideOverlay = false;
+	hideOverlay = true;
 	/**
 	 * @method			getIsMobile
 	 * @description		Método Get que consulta el valor de la variable isMobile, la cual
