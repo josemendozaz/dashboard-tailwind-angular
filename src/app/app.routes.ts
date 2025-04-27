@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { ForgotPasswordComponent } from './auth/pages/forgot-password/forgot-password.component';
 import { Page404Component } from './shared/components/page-404/page-404.component';
+import { HomeComponent } from './dashboard/pages/home/home.component';
 
 export const routes: Routes = [
 	{
@@ -31,8 +32,23 @@ export const routes: Routes = [
 	},
 	{
 		path			: 'dashboard',
-		component		: DashboardComponent,
-		title			: 'Dashboard Page'
+		loadComponent	: () => import('./dashboard/dashboard.component').then( c => c.DashboardComponent ),
+		children		: [
+			{
+				path	: '',
+				component : HomeComponent,
+				title : 'Dashboard Home Page'
+			},
+			// {
+			// 	path	: 'forgot-password',
+			// 	component : ForgotPasswordComponent,
+			// 	title : 'Forgot Password Page'
+			// },
+			// {
+			// 	path			: '**',
+			// 	redirectTo		: 'login'
+			// }
+		]
 		// canActivate		: [ PreventLoginGuard ],
 		// canLoad			: [ PreventLoginGuard ],
 	},

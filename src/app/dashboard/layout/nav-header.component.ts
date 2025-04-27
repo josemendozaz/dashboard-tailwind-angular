@@ -53,7 +53,7 @@ import { ThemeService } from '../services/theme/theme.service';
 		<div class="text-center font-bold md:hidden">
 			<ng-icon class="p-0 w-4 h-4 text-2xl md:text-xl cursor-pointer items-start" name="heroBars3Solid" (click)="openSidebar()"></ng-icon>
 		</div>
-		<div class="text-center grid grid-cols-[1fr_50px_50px_50px] items-center">
+		<div class="text-center grid grid-cols-[1fr_50px_50px_50px] md:grid-cols-[1fr_50px_50px_50px] items-center">
 			<div></div>
 			<div class="group relative transition-all duration-100 ease-linear cursor-pointer" (click)="changeTheme()">
 				<ng-icon class="relative p-0 w-4 h-4 text-2xl md:text-xl items-start" [name]="theme == 'light' ? 'heroSunSolid' : 'heroMoonSolid'"></ng-icon>
@@ -74,11 +74,20 @@ import { ThemeService } from '../services/theme/theme.service';
  * @description	Layout que contiene el nav header
  */
 export class NavHeaderComponent {
-
+	/**
+	 * @var				theme
+	 * @description		Variable que contiene el tema actual
+	 */
 	theme : string	= '';
-
+	/**
+	 * @var				dropdownOpen
+	 * @description		Bandera booleana que indica si se debe cerrar o no el menú desplegable del nav header
+	 */
 	dropdownOpen = false;
-
+	/**
+	 * @var				menuItems
+	 * @description		Arreglo de objetos que contiene los items del menú del nav header
+	 */
 	menuItems: DropdownItem[] = [
 		{
 			label	: 'Perfil',
@@ -99,8 +108,6 @@ export class NavHeaderComponent {
 			}
 		}
 	];
-
-
 	/**
 	 * @method			constructor
 	 * @description		Constructor para el componente, se inyectan las dependencias y/o servicios necesarios
@@ -116,8 +123,6 @@ export class NavHeaderComponent {
 	ngOnInit(): void {
 		this.theme	= this.themeService.getThemeInDataStorage;
 	}
-
-
 	/**
 	 * @method			changeTheme
 	 * @description		Abre el sidebar
@@ -125,9 +130,6 @@ export class NavHeaderComponent {
 	changeTheme() {
 		this.theme	= this.themeService.changeTheme();
 	}
-
-
-
 	/**
 	 * @method			openSidebar
 	 * @description		Abre el sidebar
@@ -138,20 +140,23 @@ export class NavHeaderComponent {
 		// Luego, activamos la animación en el siguiente ciclo de cambio
 		setTimeout( () => { this.sidebarService.setSidebarShow	= true; }, 10 );
 	}
-
-
-	toggleDropdown(event: Event): void {
-		event.stopPropagation(); // previene propagación para evitar cierre inmediato
-		this.dropdownOpen = !this.dropdownOpen;
-	}
-
+	/**
+	 * @method			openSidebar
+	 * @description		Cierra el menú desplegable en el nav header
+	 */
 	closeDropdown(): void {
 		this.dropdownOpen = false;
 	}
-
+	/**
+	 * @method			logout
+	 * @description		Cierra la sesión
+	 */
 	logout(): void {
 		console.log('Cerrar sesión');
 	}
-
+	// toggleDropdown(event: Event): void {
+	// 	event.stopPropagation(); // previene propagación para evitar cierre inmediato
+	// 	this.dropdownOpen = !this.dropdownOpen;
+	// }
 
 }

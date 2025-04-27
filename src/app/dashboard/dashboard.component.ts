@@ -7,6 +7,7 @@ import { heroBars3Solid } from '@ng-icons/heroicons/solid';
 import { SidebarComponent } from "./layout/sidebar/sidebar.component";
 import { NavHeaderComponent } from "./layout/nav-header.component";
 import { FooterComponent } from "./layout/footer.component";
+import { RouterOutlet } from '@angular/router';
 /*
  * SERVICES SECTION
  */
@@ -23,7 +24,8 @@ import { FooterComponent } from "./layout/footer.component";
 		// NgIcon,
 		SidebarComponent,
 		NavHeaderComponent,
-		FooterComponent
+		FooterComponent,
+		RouterOutlet
 	],
 	providers	: [ provideIcons({ heroBars3Solid }) ],
 })
